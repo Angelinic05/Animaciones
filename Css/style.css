@@ -1,0 +1,116 @@
+#anim{
+    position: relative;
+    width: 100%; 
+    height: 850px;
+    background-image: url('../image/fondo.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+
+#sol {
+    margin-left: 40px;
+    margin-top: 20px;
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    width: 140px;
+    height: 140px; 
+    background-image: url('../image/sol.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    z-index: 1;  
+    animation: girar-sol 8s linear infinite; 
+}
+
+@keyframes girar-sol {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg); 
+    }
+}
+
+
+#nube {
+    position: relative;
+    width: 200px; 
+    height: 100px;
+    z-index: 2; 
+    left: 100%; 
+    border: 1px solid;
+    
+    
+}
+
+#nube::before {
+    margin-top: 50px;
+    content: ""; 
+    position: absolute;
+    top: 0; 
+    width: 400px; 
+    height: 200px; 
+    background-image: url('../image/nube.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    animation: mover-nube 10s linear infinite;
+} 
+
+@keyframes mover-nube {
+    0% {
+        left: -100%; 
+    }
+    10%, 20%, 30%, 40%  {
+        left: -400%; 
+    }
+    100% {
+        left: -1050%; 
+    }
+}
+
+#flor {
+    position: absolute;
+    top: 650px; 
+    left: 62%; 
+    width: 100px; 
+    height: 100px; 
+    background-image: url('../image/flor.webp'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 3; 
+    animation: crecer-flor 6s linear; 
+}
+
+@keyframes crecer-flor {
+    0%, 10%, 20%, 30%, 40%, 50%, 60% {
+        transform: scale(0); 
+    }
+    100% {
+        transform: scale(1); 
+    }
+}
+
+
+#lluvia {
+    position: relative;
+    margin-top: 225px;
+    right: 40vw;
+    width: 200px; 
+    height: 0px;
+    background-image: url('../image/lluvia.png'), linear-gradient(to bottom, rgba(0, 0, 0, 0) 1px, transparent 1px);
+    background-size: 40%; 
+    animation: llover 2s linear 1 2s; 
+}
+
+@keyframes llover{
+    0%{
+        opacity: 0; 
+    }
+    100%{
+        height: 490px;
+        background-position: 0 90vh;
+    }
+}
+
+
